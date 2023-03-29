@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="style.css">
+<title> Register-Courses Management </title>
+</head>
+<body>
+  <body>
+    <div class="register-page">
+    <form action="add_new_user" th:object="${registerRequest}" method="POST">
+      <div class="form">
+        <div class="register">
+          <div class="register-header">
+            <h3>Create new Account</h3>
+          </div>
+        </div>
+          <input type="text" th:field="*{username}" placeholder="username"/>
+          <input type="password" th:field="*{password}" placeholder="password"/>
+          <button th:action="@{/login}">register</button>
+      </div>
+      </form>
+    </div>
+</body>
+</body>
+</html>

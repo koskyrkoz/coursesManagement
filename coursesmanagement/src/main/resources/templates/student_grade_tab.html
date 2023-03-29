@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Student Management System</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Course Management System</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+</nav>
+<br>
+<br>
+	<div class = "container">
+		<div class = "row">
+			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class = "text-center"> Grades Tab </h1>
+				<div class = "card-body">
+					<h4 class = "text-center" th:text=" 'Course Name : ' + ${grade.courseName}"></h4>
+					<h4 class = "text-center" th:text=" 'Student ID : ' + ${grade.studentID}"></h4>
+					<h4 class = "text-center" th:text=" 'Project Grade : ' + ${grade.projectGrade}"></h4>
+					<h4 class = "text-center" th:text=" 'Exam Grade : ' + ${grade.examGrade}"></h4>
+						
+					<div class = "box-footer">
+						<a th:href="@{/courses/{course_name}/students/student/{id}/grades/add_grade(course_name=${grade.courseName}, id=${grade.studentID})}" type="submit" class = "btn btn-dark">
+							Enter grades
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

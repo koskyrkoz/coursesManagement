@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Student Management System</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#" th:href="@{/courses}">Course Management System</a>
+</nav>
+<br>
+<br>
+	<div class = "container">
+		<div class = "row">
+			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class = "text-center"> Edit Student Info </h1>
+				<div class = "card-body">
+					<form th:action="@{/courses/{course_name}/students/student/{id}/edit_student_info(course_name=${student.course}, id=${student.id})}" th:object = "${student}" method="POST">
+						
+						<h3 class = "text-center" th:text = "'Student ID : ' + *{id}"></h3>
+						
+												
+						<div class ="form-group">
+							<label> Student Fullname </label>
+							<input
+							type = "text"
+							name = "description"
+							th:field = "*{fullname}"
+							class = "form-control"
+							placeholder="Update student fullname" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Student Registration Year </label>
+							<input
+							type = "text"
+							name = "year"
+							th:field = "*{registrationYear}"
+							class = "form-control"
+							placeholder="Update student registration year" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Student Current Semester </label>
+							<input
+							type = "text"
+							name = "semester"
+							th:field = "*{semester}"
+							class = "form-control"
+							placeholder="Update student current semester" 
+							/>
+						</div>
+						
+						<div class = "box-footer">
+							<button type="submit" class = "btn btn-dark">
+								Save Changes
+							</button>
+						</div>
+					</form>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
